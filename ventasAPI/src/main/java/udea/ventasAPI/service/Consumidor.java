@@ -11,7 +11,7 @@ import udea.ventasAPI.modelo.Venta;
 @Service
 public class Consumidor{
 
-  public static final String QUEUE_CONSUMIDOR = "udea.retail.nuevaventa";
+  public static final String COLA_CONSUMIDOR = "udea.retail.nuevaventa";
 
   private String colaPublicador;
   private String routingKey;
@@ -19,10 +19,10 @@ public class Consumidor{
   @Autowired
   private Publicador publicador;
 
-  @RabbitListener(queues = QUEUE_CONSUMIDOR)
-  public void receiveMessage(final Venta venta) {
+  @RabbitListener(queues = COLA_CONSUMIDOR)
+  public void recibirMensaje(final Venta venta) {
 
-    System.out.println("Received message: " + venta.toString());
+    System.out.println("Mensaje recibido: " + venta.toString());
 
     publicador.publicarMensajeAsnc(venta);
   }
