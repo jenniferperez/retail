@@ -15,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
 @Service
 @PropertySource(value="classpath:application.properties")
 @ConfigurationProperties(prefix = "rabbit.exchange")
-public class Publicador {
+public class PublicadorVentaCreada {
 
   private String nombreExchange;
   private String routingKey;
@@ -23,7 +23,7 @@ public class Publicador {
   private final RabbitTemplate rabbitTemplate;
 
   @Autowired
-  public Publicador(final RabbitTemplate rabbitTemplate) {
+  public PublicadorVentaCreada(final RabbitTemplate rabbitTemplate) {
     this.rabbitTemplate = rabbitTemplate;
   }
 

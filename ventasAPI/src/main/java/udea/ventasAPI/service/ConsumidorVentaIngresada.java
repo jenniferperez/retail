@@ -9,15 +9,15 @@ import udea.ventasAPI.modelo.Venta;
  * Created by pabliny193@gmail.com on 06/12/2017.
  */
 @Service
-public class Consumidor{
+public class ConsumidorVentaIngresada {
 
-  public static final String COLA_CONSUMIDOR = "udea.retail.nuevaventa";
+  public static final String COLA_CONSUMIDOR = "udea.retail.ventaingresada";
 
   private String colaPublicador;
   private String routingKey;
 
   @Autowired
-  private Publicador publicador;
+  private PublicadorVentaCreada publicador;
 
   @RabbitListener(queues = COLA_CONSUMIDOR)
   public void recibirMensaje(final Venta venta) {
