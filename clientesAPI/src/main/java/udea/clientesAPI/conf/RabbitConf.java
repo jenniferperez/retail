@@ -5,6 +5,7 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -14,19 +15,15 @@ import org.springframework.context.annotation.PropertySource;
  */
 @Configuration
 @PropertySource(value="classpath:application.properties")
+@ConfigurationProperties(prefix = "rabbit.configuracion")
 public class RabbitConf {
 
-  @Value("${rabbit.configuration.hostname}")
   private String hostname;
-
-  @Value("${rabbit.configuration.username}")
   private String username;
-
-  @Value("${rabbit.configuration.password}")
   private String password;
-
-  @Value("${rabbit.configuration.virtualHost}")
   private String virtualHost;
+  private long timeout;
+  private int heartBeat;
 
   @Bean
   public ConnectionFactory connectionFactory(){
@@ -34,8 +31,8 @@ public class RabbitConf {
     connectionFactory.setUsername(getUsername());
     connectionFactory.setPassword(getPassword());
     connectionFactory.setVirtualHost(getVirtualHost());
-    connectionFactory.setChannelCheckoutTimeout(10000);
-    connectionFactory.setRequestedHeartBeat(30);
+    connectionFactory.setChannelCheckoutTimeout(getTimeout());
+    connectionFactory.setRequestedHeartBeat(getHeartBeat());
     return connectionFactory;
   }
 
@@ -81,5 +78,21 @@ public class RabbitConf {
 
   public void setVirtualHost(String virtualHost) {
     this.virtualHost = virtualHost;
+  }
+
+  public long getTimeout() {
+    return timeout;
+  }
+
+  public void setTimeout(long timeout) {
+    this.timeout = timeout;
+  }
+
+  public int getHeartBeat() {
+    return heartBeat;
+  }
+
+  public void setHeartBeat(int heartBeat) {
+    this.heartBeat = heartBeat;
   }
 }
