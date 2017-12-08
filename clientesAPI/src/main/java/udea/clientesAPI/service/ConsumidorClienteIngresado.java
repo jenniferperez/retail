@@ -9,12 +9,12 @@ import udea.clientesAPI.modelo.Cliente;
  * Created by pabliny193@gmail.com on 05/12/2017.
  */
 @Service
-public class Consumidor{
+public class ConsumidorClienteIngresado {
 
-  public static final String COLA_CONSUMIDOR = "udea.crm.nuevocliente";
+  public static final String COLA_CONSUMIDOR = "udea.crm.clienteingresado";
 
   @Autowired
-  private Publicador publicador;
+  private PublicadorClienteCreado publicador;
 
   @RabbitListener(queues = COLA_CONSUMIDOR)
   public void recibirMensaje(final Cliente cliente) {
