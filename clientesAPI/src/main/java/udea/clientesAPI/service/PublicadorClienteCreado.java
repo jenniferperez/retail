@@ -1,5 +1,6 @@
 package udea.clientesAPI.service;
 
+import org.apache.log4j.Logger;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -17,6 +18,8 @@ import java.util.concurrent.CompletableFuture;
 @ConfigurationProperties(prefix = "rabbit.exchange")
 public class PublicadorClienteCreado {
 
+  private static final Logger LOGGER = Logger.getLogger(PublicadorClienteCreado.class);
+
   private String nombreExchange;
   private String routingKey;
 
@@ -29,6 +32,7 @@ public class PublicadorClienteCreado {
 
   public void publicarMensajeAsnc(Cliente cliente){
     CompletableFuture.runAsync(()-> rabbitTemplate.convertAndSend(getNombreExchange(), getRoutingKey(), cliente));
+    LOGGER.info("Cliente publicado: " + cliente.toString());
   }
 
   public String getNombreExchange() {
