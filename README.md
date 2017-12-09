@@ -20,6 +20,6 @@ Se obvia la implementación de la aplicación Retail ya que su función es persi
 Se distribuye la carga de consulta de mensajes utilizando las demás colas integradas con los microservicios.
 
 Autores:
-Jennifer Pérez Bedoya
-Juan Pablo Herrera
-Oscar Andrés Úsuga
+- Jennifer Pérez Bedoya
+- Juan Pablo Herrera
+- Oscar Andrés Úsuga
