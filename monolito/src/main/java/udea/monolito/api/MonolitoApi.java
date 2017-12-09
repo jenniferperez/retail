@@ -2,7 +2,6 @@ package udea.monolito.api;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import udea.monolito.modelo.Cliente;
@@ -24,7 +23,7 @@ public interface MonolitoApi {
     produces = { "application/json" },
     consumes = { "application/json" },
     method = RequestMethod.POST)
-  ResponseEntity<Void> ingresarVenta(@ApiParam(value = "Venta a ingresar") @RequestBody Venta venta);
+  ResponseEntity<Void> ingresarVenta(Venta venta);
 
   @ApiOperation(
     value = "Ingresa un nuevo cliente",
@@ -37,7 +36,7 @@ public interface MonolitoApi {
     produces = { "application/json" },
     consumes = { "application/json" },
     method = RequestMethod.POST)
-  ResponseEntity<Void> ingresarCliente(@ApiParam(value = "Cliente a ingresar") @RequestBody Cliente cliente);
+  ResponseEntity<Void> ingresarCliente(Cliente cliente);
 
   @ApiOperation(
     value = "Ingresa una nueva devolución",
@@ -50,6 +49,6 @@ public interface MonolitoApi {
     produces = { "application/json" },
     consumes = { "application/json" },
     method = RequestMethod.POST)
-  ResponseEntity<Void> ingresarDevolucion(@ApiParam(value = "Devolución a ingresar") @RequestBody Devolucion devolucion);
+  ResponseEntity<Void> ingresarDevolucion(Devolucion devolucion);
 
 }

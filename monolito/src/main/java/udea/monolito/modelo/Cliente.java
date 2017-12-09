@@ -8,8 +8,8 @@ import java.util.Objects;
 
 public class Cliente extends ResourceSupport {
 
-  @JsonProperty("id")
-  private String id;
+  @JsonProperty("idCliente")
+  private String idCliente;
   @JsonProperty("nombre")
   private String nombre;
   @JsonProperty("telefono")
@@ -17,11 +17,11 @@ public class Cliente extends ResourceSupport {
 
   @ApiModelProperty(example = "123456789", required = true)
   public String getIdCliente() {
-    return id;
+    return idCliente;
   }
 
   public void setIdCliente(String id) {
-    this.id = id;
+    this.idCliente = id;
   }
 
   @ApiModelProperty(example = "Rammstein", required = true)
@@ -52,12 +52,12 @@ public class Cliente extends ResourceSupport {
     }
 
     Cliente cliente = (Cliente) obj;
-    return Objects.equals(this.id, cliente.id);
+    return Objects.equals(this.idCliente, cliente.idCliente);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(idCliente);
   }
 
 }

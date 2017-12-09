@@ -8,8 +8,8 @@ import java.util.Objects;
 
 public class Venta extends ResourceSupport {
 
-  @JsonProperty("id")
-  private String id;
+  @JsonProperty("idVenta")
+  private String idVenta;
   @JsonProperty("idCliente")
   private String idCliente;
   @JsonProperty("detalle")
@@ -19,11 +19,11 @@ public class Venta extends ResourceSupport {
 
   @ApiModelProperty(example = "123456789", required = true)
   public String getIdVenta() {
-    return id;
+    return idVenta;
   }
 
   public void setIdVenta(String id) {
-    this.id = id;
+    this.idVenta = id;
   }
 
   @ApiModelProperty(example = "123456789", required = true)
@@ -63,12 +63,12 @@ public class Venta extends ResourceSupport {
     }
 
     Venta venta = (Venta) obj;
-    return Objects.equals(this.id, venta.id) && Objects.equals(this.idCliente, venta.idCliente);
+    return Objects.equals(this.idVenta, venta.idVenta) && Objects.equals(this.idCliente, venta.idCliente);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, idCliente);
+    return Objects.hash(idVenta, idCliente);
   }
 
 }
