@@ -5,7 +5,7 @@ package udea.clientesAPI.modelo;
  */
 public class Cliente {
 
-  private String id;
+  private String idCliente;
   private String nombre;
   private String telefono;
 
@@ -13,17 +13,17 @@ public class Cliente {
   }
 
   public Cliente(String id, String nombre, String telefono) {
-    this.id = id;
+    this.idCliente = id;
     this.nombre = nombre;
     this.telefono = telefono;
   }
 
   public String getId() {
-    return id;
+    return idCliente;
   }
 
   public void setId(String id) {
-    this.id = id;
+    this.idCliente = id;
   }
 
   public String getNombre() {
@@ -45,7 +45,7 @@ public class Cliente {
   @Override
   public String toString() {
     return "Cliente{" +
-            "id='" + id + '\'' +
+            "id='" + idCliente + '\'' +
             ", nombre='" + nombre + '\'' +
             ", telefono='" + telefono + '\'' +
             '}';

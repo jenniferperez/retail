@@ -5,7 +5,7 @@ package udea.devolucionesAPI.modelo;
  */
 public class Devolucion {
 
-  private String id;
+  private String idDevolucion;
   private String idCliente;
   private String tipo;
   private String detalle;
@@ -14,18 +14,18 @@ public class Devolucion {
   }
 
   public Devolucion(String id, String idCliente, String tipo, String detalle) {
-    this.id = id;
+    this.idDevolucion = id;
     this.idCliente = idCliente;
     this.tipo = tipo;
     this.detalle = detalle;
   }
 
   public String getId() {
-    return id;
+    return idDevolucion;
   }
 
   public void setId(String id) {
-    this.id = id;
+    this.idDevolucion = id;
   }
 
   public String getIdCliente() {
@@ -55,7 +55,7 @@ public class Devolucion {
   @Override
   public String toString() {
     return "Devolucion{" +
-            "id='" + id + '\'' +
+            "id='" + idDevolucion + '\'' +
             ", idCliente='" + idCliente + '\'' +
             ", tipo='" + tipo + '\'' +
             ", detalle='" + detalle + '\'' +

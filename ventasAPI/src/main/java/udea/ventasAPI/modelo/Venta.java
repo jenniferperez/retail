@@ -5,7 +5,7 @@ package udea.ventasAPI.modelo;
  */
 public class Venta {
 
-  private String id;
+  private String idVenta;
   private String idCliente;
   private String detalle;
   private String valor;
@@ -14,18 +14,18 @@ public class Venta {
   }
 
   public Venta(String id, String idCliente, String detalle, String valor) {
-    this.id = id;
+    this.idVenta = id;
     this.idCliente = idCliente;
     this.detalle = detalle;
     this.valor = valor;
   }
 
   public String getId() {
-    return id;
+    return idVenta;
   }
 
   public void setId(String id) {
-    this.id = id;
+    this.idVenta = id;
   }
 
   public String getIdCliente() {
@@ -55,7 +55,7 @@ public class Venta {
   @Override
   public String toString() {
     return "Venta{" +
-            "id='" + id + '\'' +
+            "id='" + idVenta + '\'' +
             ", idCliente='" + idCliente + '\'' +
             ", detalle='" + detalle + '\'' +
             ", valor='" + valor + '\'' +
