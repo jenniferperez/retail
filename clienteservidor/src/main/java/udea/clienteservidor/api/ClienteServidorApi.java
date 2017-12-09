@@ -1,16 +1,16 @@
-package udea.monolito.api;
+package udea.clienteservidor.api;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import udea.monolito.modelo.Cliente;
-import udea.monolito.modelo.Devolucion;
-import udea.monolito.modelo.Venta;
+import udea.clienteservidor.modelo.Cliente;
+import udea.clienteservidor.modelo.Devolucion;
+import udea.clienteservidor.modelo.Venta;
 
 @Api(value = "Cliente/Servidor",
      description = "API consumida por las aplicaciones Cliente/Servidor, las cuales son las encargadas de enviar las transacciones a Retail")
-public interface MonolitoApi {
+public interface ClienteServidorApi {
 
   @ApiOperation(
     value = "Ingresa una nueva venta",
@@ -19,7 +19,7 @@ public interface MonolitoApi {
   @ApiResponses(value = {
     @ApiResponse(code = 201, message = "venta ingresada"),
     @ApiResponse(code = 400, message = "entrada inválida") })
-  @RequestMapping(value = "/monolito/venta/ingresar",
+  @RequestMapping(value = "/clienteservidor/venta/ingresar",
     produces = { "application/json" },
     consumes = { "application/json" },
     method = RequestMethod.POST)
@@ -32,7 +32,7 @@ public interface MonolitoApi {
   @ApiResponses(value = {
     @ApiResponse(code = 201, message = "cliente ingresado"),
     @ApiResponse(code = 400, message = "entrada inválida") })
-  @RequestMapping(value = "/monolito/cliente/ingresar",
+  @RequestMapping(value = "/clienteservidor/cliente/ingresar",
     produces = { "application/json" },
     consumes = { "application/json" },
     method = RequestMethod.POST)
@@ -45,7 +45,7 @@ public interface MonolitoApi {
   @ApiResponses(value = {
     @ApiResponse(code = 201, message = "devolución ingresada"),
     @ApiResponse(code = 400, message = "entrada inválida") })
-  @RequestMapping(value = "/monolito/devolucion/ingresar",
+  @RequestMapping(value = "/clienteservidor/devolucion/ingresar",
     produces = { "application/json" },
     consumes = { "application/json" },
     method = RequestMethod.POST)

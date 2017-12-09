@@ -1,4 +1,4 @@
-package udea.monolito.configuracion;
+package udea.clienteservidor.configuracion;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class SwaggerConfig {
   public Docket customImplementation() {
     return new Docket(DocumentationType.SWAGGER_2)
             .select()
-                .apis(RequestHandlerSelectors.basePackage("udea.monolito.api"))
+                .apis(RequestHandlerSelectors.basePackage("udea.clienteservidor.api"))
                 .build()
             .apiInfo(apiInfo());
   }

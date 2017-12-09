@@ -1,17 +1,16 @@
-package udea.monolito.servicio;
+package udea.clienteservidor.servicio;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
-import udea.monolito.modelo.Cliente;
-import udea.monolito.modelo.Venta;
+import udea.clienteservidor.modelo.Venta;
 
 import java.util.concurrent.CompletableFuture;
 
 @Service
-@ConfigurationProperties(prefix = "rabbit.exchange.clientes")
-public class PublicadorClienteIngresado {
+@ConfigurationProperties(prefix = "rabbit.exchange.ventas")
+public class PublicadorVentaIngresada {
 
   private final RabbitTemplate rabbitTemplate;
 
@@ -19,7 +18,7 @@ public class PublicadorClienteIngresado {
   private String routingKey;
 
   @Autowired
-  public PublicadorClienteIngresado(final RabbitTemplate rabbitTemplate) {
+  public PublicadorVentaIngresada(final RabbitTemplate rabbitTemplate) {
     this.rabbitTemplate = rabbitTemplate;
   }
 
@@ -39,8 +38,8 @@ public class PublicadorClienteIngresado {
     this.routingKey = routingKey;
   }
 
-  public void publicarMensajeAync(Cliente cliente) {
-    CompletableFuture.runAsync(() -> rabbitTemplate.convertAndSend(getExchange(), getRoutingKey(), cliente));
+  public void publicarMensajeAync(Venta venta) {
+    CompletableFuture.runAsync(() -> rabbitTemplate.convertAndSend(getExchange(), getRoutingKey(), venta));
   }
 
 }

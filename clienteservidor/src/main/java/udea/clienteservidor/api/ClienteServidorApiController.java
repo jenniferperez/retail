@@ -1,4 +1,4 @@
-package udea.monolito.api;
+package udea.clienteservidor.api;
 
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,15 +6,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
-import udea.monolito.modelo.Cliente;
-import udea.monolito.modelo.Devolucion;
-import udea.monolito.modelo.Venta;
-import udea.monolito.servicio.PublicadorClienteIngresado;
-import udea.monolito.servicio.PublicadorDevolucionIngresada;
-import udea.monolito.servicio.PublicadorVentaIngresada;
+import udea.clienteservidor.modelo.Cliente;
+import udea.clienteservidor.modelo.Devolucion;
+import udea.clienteservidor.modelo.Venta;
+import udea.clienteservidor.servicio.PublicadorClienteIngresado;
+import udea.clienteservidor.servicio.PublicadorDevolucionIngresada;
+import udea.clienteservidor.servicio.PublicadorVentaIngresada;
 
 @Controller
-public class MonolitoApiController implements MonolitoApi {
+public class ClienteServidorApiController implements ClienteServidorApi {
 
   @Autowired
   private PublicadorVentaIngresada publicadorVentaIngresada;

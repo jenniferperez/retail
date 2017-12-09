@@ -1,4 +1,4 @@
-package udea.monolito.configuracion;
+package udea.clienteservidor.configuracion;
 
 
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
