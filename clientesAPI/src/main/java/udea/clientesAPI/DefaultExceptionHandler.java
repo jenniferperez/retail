@@ -12,7 +12,7 @@ import udea.clientesAPI.util.ErrorMessage;
 /**
  * Created by pabliny193@gmail.com on 08/12/2017.
  * <p>
- * Clase encarga de manejar las excepciones que ocurran dentro del microservicio.
+ * Clase encargada de manejar las excepciones que ocurran dentro del microservicio.
  */
 @ControllerAdvice
 public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
