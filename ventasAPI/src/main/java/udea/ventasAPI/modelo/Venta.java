@@ -20,11 +20,11 @@ public class Venta {
     this.valor = valor;
   }
 
-  public String getId() {
+  public String getIdVenta() {
     return idVenta;
   }
 
-  public void setId(String id) {
+  public void setIdVenta(String id) {
     this.idVenta = id;
   }
 
@@ -55,7 +55,7 @@ public class Venta {
   @Override
   public String toString() {
     return "Venta{" +
-            "id='" + idVenta + '\'' +
+            "idVenta='" + idVenta + '\'' +
             ", idCliente='" + idCliente + '\'' +
             ", detalle='" + detalle + '\'' +
             ", valor='" + valor + '\'' +

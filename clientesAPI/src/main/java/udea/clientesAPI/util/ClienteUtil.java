@@ -22,7 +22,7 @@ public class ClienteUtil {
   public static Cliente getCliente(String idCliente) {
     Cliente clienteARetornar = new Cliente();
     for (Cliente cliente : clienteLista) {
-      if (StringUtils.isNotEmpty(idCliente) && cliente.getId().equals(idCliente)) {
+      if (StringUtils.isNotEmpty(idCliente) && cliente.getIdCliente().equals(idCliente)) {
         clienteARetornar = cliente;
       }
     }

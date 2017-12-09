@@ -18,11 +18,11 @@ public class Cliente {
     this.telefono = telefono;
   }
 
-  public String getId() {
+  public String getIdCliente() {
     return idCliente;
   }
 
-  public void setId(String id) {
+  public void setIdCliente(String id) {
     this.idCliente = id;
   }
 
@@ -45,7 +45,7 @@ public class Cliente {
   @Override
   public String toString() {
     return "Cliente{" +
-            "id='" + idCliente + '\'' +
+            "idCliente='" + idCliente + '\'' +
             ", nombre='" + nombre + '\'' +
             ", telefono='" + telefono + '\'' +
             '}';
